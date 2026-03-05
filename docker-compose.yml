@@ -1,5 +1,6 @@
 services:
   php:
     image: composer
+    command: tail -f /dev/null
     volumes:
       - ./:/app

@@ -1,0 +1,56 @@
+{
+    "name": "iamrgroot/laravel-data-openapi-generator",
+    "description": "Generate OpenAPI specification for Laravel routes with Laravel Data objects.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "IAmRGroot\\LaravelData\\OpenApi\\": "src/",
+            "IAmRGroot\\LaravelData\\OpenApi\\Test\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "IAmRGroot\\LaravelData\\OpenApi\\OpenApiServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Robert Groot",
+            "email": "github@rgroot.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "format": [
+            "@php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --config=./php-cs.php --path-mode=intersection . --ansi"
+        ],
+        "format-dry": [
+            "@php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run --verbose --config=./php-cs.php --path-mode=intersection . --ansi"
+        ],
+        "larastan": [
+            "vendor/bin/phpstan analyse"
+        ],
+        "test": [
+            "vendor/bin/pest"
+        ]
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.63",
+        "nunomaduro/larastan": "^2.9",
+        "pestphp/pest": "^2.35"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "require": {
+        "spatie/laravel-data": "^4.8",
+        "laravel/framework": "^8|^9|^10|^11",
+        "phpdocumentor/reflection-docblock": "^5.4"
+    }
+}
